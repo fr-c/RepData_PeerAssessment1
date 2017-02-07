@@ -17,7 +17,7 @@ perday <- aggregate(steps ~ date, act, sum)
 with(perday, hist(steps))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
+![](figure/unnamed-chunk-2-1.png)<!-- -->
 
 The mean of the total number of steps taken per day is:
 
@@ -51,7 +51,7 @@ avgday <- aggregate(steps ~ interval, act, mean)
 with(avgday, plot(interval, steps, type = "l", main = "Average Daily Activity Pattern"))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+![](figure/unnamed-chunk-5-1.png)<!-- -->
 
 The 5-minute interval that, on average across all the days in the dataset, contains the maximum number of steps is:
 
@@ -96,7 +96,7 @@ perday2 <- aggregate(steps ~ date, act2, sum)
 with(perday2, hist(steps))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+![](figure/unnamed-chunk-9-1.png)<!-- -->
 
 ```r
 mean(perday2$steps)
@@ -138,4 +138,4 @@ library(ggplot2)
 qplot(interval, steps, data = avgday2, geom = "line", facets = daytype ~ ., main = "Comparison of Weekday & Weekend Activity Patterns")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
+![](figure/unnamed-chunk-11-1.png)<!-- -->
