@@ -14,7 +14,7 @@ act <- read.csv("activity.csv")
 
 We sum the total number of steps for each day and display a histogram of the total number of steps taken each day:
 
-```{r, echo=TRUE}
+```{r, echo=TRUE, fig.path="figure/"}
 perday <- aggregate(steps ~ date, act, sum)
 with(perday, hist(steps))
 ```
@@ -35,7 +35,7 @@ median(perday$steps)
 
 We first create the average daily pattern by taking the mean number of steps over each interval, then we plot it as a time series
 
-```{r, echo=TRUE}
+```{r, echo=TRUE, fig.path="figure/"}
 avgday <- aggregate(steps ~ interval, act, mean)
 with(avgday, plot(interval, steps, type = "l", main = "Average Daily Activity Pattern"))
 ```
@@ -66,7 +66,7 @@ for (i in 1:length(act2$steps)) {
 
 We can now compare the new estimates of the total number of steps taken each day with the original ones (histogram, mean and median):
 
-```{r, echo=TRUE}
+```{r, echo=TRUE, fig.path="figure/"}
 perday2 <- aggregate(steps ~ date, act2, sum)
 with(perday2, hist(steps))
 
@@ -91,7 +91,7 @@ act2$daytype <- as.factor(act2$daytype)
 
 Then we compare the activity pattern of the two:
 
-```{r, echo=TRUE}
+```{r, echo=TRUE, fig.path="figure/"}
 avgday2 <- aggregate(steps ~ interval + daytype, act2, mean)
 
 library(ggplot2)
